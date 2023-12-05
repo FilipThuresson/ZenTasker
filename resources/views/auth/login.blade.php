@@ -5,7 +5,7 @@
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                        <li class="text-danger">{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -16,6 +16,7 @@
             <div class="py-2 px-1 text-stext">
                 <label class="block text-left py-1" for="email">Email</label>
                 <input class="block mx-auto w-full p-2 rounded-lg border-0 bg-bg" id="email" name="email" type="email" value="{{ old('email') }}">
+
             </div>
 
             <div class="py-2 px-1 text-stext">
