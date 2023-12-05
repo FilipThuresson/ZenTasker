@@ -12,15 +12,17 @@ It uses Laravel as a base with laravel passport as auth service, As a database Z
 is built using Vue.js. Version control is manged by git.
 
 ## Currently working on:
-* User auth << Styling needed
-* Team creation << Not started
-* Team Roles << Not started
+* Team creation
+* Team Roles
+* Task crud
 
 ## Later stage
-* Task crud
 * File upload using laravel storage 
 * Custom helper function to format string to include uploads
 * Revisions
-* Moblie Responsive
+* Mobile Responsive
 * 3rd Party Integration
 
+## Done:
+* Basic UI and design
+* User auth
