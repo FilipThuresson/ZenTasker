@@ -9,7 +9,7 @@
                 <a href="#" title="Your Teams"><i class="fa-solid fa-users"></i></a>
                 <a href="{{ url('/dashboard') }}" class="{{ request()->routeIs('dashboard.*') ? 'active' : ''  }}" title="Your Dashboard">Dashboard</a>
 
-                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown">{{ Auth::user()->name }}</button>
+                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="{{ request()->routeIs('profile.*') ? 'active': '' }}">{{ Auth::user()->name }}</button>
 
                 <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-52 dark:bg-gray-700 dark:divide-gray-600">
                     <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
@@ -18,7 +18,7 @@
                     </div>
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                            <a href="{{ route('profile.index') }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
                         </li>
                     </ul>
                     <div class="py-2">

@@ -16,7 +16,6 @@
             <div class="py-2 px-1 text-stext">
                 <label class="block text-left py-1" for="email">Email</label>
                 <input class="block mx-auto w-full p-2 rounded-lg border-0 bg-bg" id="email" name="email" type="email" value="{{ old('email') }}">
-
             </div>
 
             <div class="py-2 px-1 text-stext">
@@ -34,6 +33,9 @@
             </div>
             <div class="px-2 py-2 text-stext underline underline-offset-2">
                 <a href="{{ route('register') }}">No Account? Register</a>
+            </div>
+            <div class="px-2 py-2 text-stext underline underline-offset-2">
+                <a href="{{ route('password.request') }}">Forgot password?</a>
             </div>
         </form>
     </div>

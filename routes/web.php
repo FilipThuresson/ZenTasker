@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
-Route::middleware(['auth'])->get('/dashboard', function() {
+Route::middleware(['auth', 'verified'])->get('/dashboard', function() {
     return view('dashboard.index');
 })->name('dashboard.index');
+
+Route::middleware(['auth', 'verified'])->group(function(){
+    Route::resource('profile', ProfileController::class)->only(['index']);
+});
