@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ZenTasker</title>
     <script src="https://kit.fontawesome.com/9e267f4152.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
     @vite('resources/css/app.css')
 </head>
 <body>
@@ -17,5 +18,6 @@
     <div class="bg-sbg">
         {{$slot}}
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </body>
 </html>
