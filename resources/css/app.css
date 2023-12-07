@@ -12,3 +12,7 @@
 .active {
     border-bottom: 2px solid #C6AC8F;
 }
+
+.active_aside {
+    margin-left: 1.5rem;
+}

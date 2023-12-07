@@ -1,4 +1,4 @@
-<div class="w-100 py-6 bg-bg h-fit">
+<div class="w-100 py-6 bg-bg h-[100px]">
     <div class="flex items-center justify-between mx-20">
         <div>
             <h1 class="font-semibold text-2xl text-text "><a href="{{route('index')}}">ZenTasker</a></h1>

@@ -1,5 +1,5 @@
-<x-app-layout>
+<x-dashboard-layout>
     <div>
         Logged in
     </div>
-</x-app-layout>
+</x-dashboard-layout>

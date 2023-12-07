@@ -19,7 +19,11 @@ export default {
             info: '#66b5e5',
             bg_input: '#2C434D',
         },
-        extend: {},
+        extend: {
+            height: {
+                'fullNav': 'calc(100vh-100px)',
+            }
+        },
     },
     plugins: [],
 }
