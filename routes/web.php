@@ -30,5 +30,6 @@ Route::middleware(['auth', 'verified'])->group(function(){
         Route::get('/', [TeamController::class, 'index'])->name('teams.index');
         Route::get('/create', [TeamController::class, 'create'])->name('teams.create');
         Route::post('/store', [TeamController::class, 'store'])->name('teams.store');
+        Route::put('/active', [TeamController::class, 'active'])->name('teams.active');
     });
 });

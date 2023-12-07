@@ -16,7 +16,7 @@ class NavBar extends Component
      */
     public function render(): View|Closure|string
     {
-        $active_team = Team::find(ActiveTeam::find(Auth::user()->id)->team_id);
-        return view('components.nav-bar', compact('active_team'));
+        $user = Auth::user();
+        return view('components.nav-bar', compact('user'));
     }
 }

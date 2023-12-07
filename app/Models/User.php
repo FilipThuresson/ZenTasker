@@ -57,9 +57,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany(Team::class, 'user_team', 'user_id', 'team_id');
     }
 
-    public function defaultTeam() {
-        return UserTeam::where('user_id', '=', Auth::user()->id)->first();
-    }
+    public function activeTeam() {
+        return $this->belongsTo(Team::class, 'current_team');
+        /*
+        return Team::find($this->current_team);
+    */}
 
     public function addToTeam(int $team) {
         $user_team = new UserTeam();

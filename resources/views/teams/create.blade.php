@@ -28,7 +28,7 @@
                         <label for="name">
                             <h3 class="text-lg">Name</h3>
                         </label>
-                        <input id="name" name="name" type="text" value="{{ old('name') }}" class="w-full block w-full p-2 rounded-lg border border-text bg-sbg">
+                        <input id="name" name="name" type="text" value="{{ old('name') }}" class="text-text w-full block w-full p-2 rounded-lg border border-stext bg-sbg">
                     </div>
                 </div>
                 <hr>

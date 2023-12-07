@@ -81,4 +81,11 @@ class TeamController extends Controller
     {
         //
     }
+
+    public function active(Request $request) {
+        $user = Auth::user();
+        $user->current_team = $request->post('new_team');
+        $user->save();
+        return back();
+    }
 }

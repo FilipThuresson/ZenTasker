@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('active_team', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('team_id');
-            $table->timestamps();
+        Schema::table('users', function(Blueprint $table) {
+            $table->foreignId('current_team')->after('remember_token');
         });
     }
 
@@ -24,6 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('active_team');
+        //
     }
 };
