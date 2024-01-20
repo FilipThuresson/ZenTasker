@@ -1,13 +1,11 @@
 <div class="w-100 py-6 bg-bg h-[100px]">
     <div class="flex items-center justify-between mx-20">
         <div>
-            <h1 class="font-semibold text-2xl text-text "><a href="{{route('index')}}">ZenTasker</a></h1>
+            <h1 class="font-semibold text-3xl text-text "><a href="{{route('index')}}">ZenTasker</a></h1>
         </div>
         <div class="text-stext text-lg flex gap-6 items-center">
             @auth
                 <a href="#" title="Notifications"><i class="fa-solid fa-bell"></i></a>
-                <!--<a href="{{ route('teams.index') }}" title="Your Teams" class="{{ request()->routeIs('teams.*') ? 'active': '' }}"><i class="fa-solid fa-users"></i></a>
-                -->
                 <button id="dropdownTeamsButton" data-dropdown-toggle="dropdownteams" class="{{ request()->routeIs('teams.*') ? 'active': '' }}"><i class="fa-solid fa-users"></i></button>
                 <a href="{{ route('dashboard.index') }}" class="{{ request()->routeIs('dashboard.*') ? 'active' : ''  }}" title="Your Dashboard"><i class="fa-solid fa-chart-gantt"></i></a>
                 <div class="flex flex-col justify-start {{ request()->routeIs('profile.*') ? 'active': '' }}">

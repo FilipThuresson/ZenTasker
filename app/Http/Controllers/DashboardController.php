@@ -7,7 +7,12 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function index(Request $request) {
+    public function index() {
         return view('dashboard.index');
+    }
+
+    public function members() {
+        $members = Auth::user()->activeTeam->members;
+        return view('dashboard.members', ['members' => $members]);
     }
 }

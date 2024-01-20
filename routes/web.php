@@ -22,7 +22,10 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::middleware(['auth', 'verified'])->name('dashboard.index');
 
 Route::middleware(['auth', 'verified'])->group(function(){
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::prefix('/dashboard')->group(function () {
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+        Route::get('/members', [DashboardController::class, 'members'])->name('dashboard.members');
+    });
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 

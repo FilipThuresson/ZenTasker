@@ -12,7 +12,7 @@ It uses Laravel as a base with laravel Fortify as auth service, As a database Ze
 is built using Laravel Blade php extenstion. Version control is manged by git.
 
 ## Currently working on:
-* Team creation > Currently working on at last commit
+* Team creation > Partially implemented
 
 
 ## Later stage
