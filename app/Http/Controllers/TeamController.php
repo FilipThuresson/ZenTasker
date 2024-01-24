@@ -3,13 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTeamRequest;
+use App\Models\Role;
 use App\Models\Team;
 use App\Models\User;
+use App\Models\UserTeamRole;
+use App\Services\TeamService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class TeamController extends Controller
 {
+
+    public function __construct (
+        protected TeamService $services
+    ) {}
+
     /**
      * Display a listing of the resource.
      */
@@ -33,20 +41,7 @@ class TeamController extends Controller
     public function store(StoreTeamRequest $request)
     {
         $validated = $request->validated();
-
-        $team = new Team();
-        $team->fill($validated);
-        $team->user_id = Auth::user()->id;
-        $team->save();
-
-        $user_emails = explode(',', $validated['users']);
-        foreach ($user_emails as $email) {
-            if (User::exists($email)) {
-                $user = User::findEmail($email);
-                $user->addToTeam($team->id);
-            }
-        }
-
+        $this->services->createTeam($validated);
         return redirect('/teams');
     }
 

@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function(Blueprint $table) {
-            $table->foreignId('current_team')->nullable()->after('remember_token');
+        Schema::create('user_team_roles', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('team_id');
+            $table->foreignId('role_id');
+            $table->timestamps();
         });
     }
 
@@ -21,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('user_roles');
     }
 };

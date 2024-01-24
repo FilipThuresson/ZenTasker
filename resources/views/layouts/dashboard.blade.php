@@ -14,12 +14,14 @@
                        Tasks
                    </a>
                </li>
+               @if(\Illuminate\Support\Facades\Auth::user()->role('edit-users'))
                <li class="py-2">
                    <a href="{{ route('dashboard.members') }}" class="hover:ml-6 duration-200 {{ request()->routeIs('dashboard.members') ? 'active_aside' : '' }}">
                        <i class="fa fa-users"></i>
                        Team members
                    </a>
                </li>
+               @endif
            </ul>
         </div>
         <div class="w-5/6">

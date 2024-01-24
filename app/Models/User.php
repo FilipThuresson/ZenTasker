@@ -57,7 +57,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany(Team::class, 'user_team', 'user_id', 'team_id');
     }
 
-    public function activeTeam() {
+    public function activeTeam(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(Team::class, 'current_team');
         /*
         return Team::find($this->current_team);
@@ -68,5 +69,25 @@ class User extends Authenticatable implements MustVerifyEmail
 
         $user_team->fill(['user_id' => $this->id, 'team_id' => $team]);
         $user_team->save();
+    }
+
+    public function role(string $code): bool
+    {
+        $roles = $this->roles();
+        foreach ($roles as $role) {
+            $role = Role::find($role->role_id);
+            if($role->code == $code || $role->code == "superadmin"){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function roles() {
+        return UserTeamRole::where([
+            ['user_id', '=', $this->id],
+            ['team_id', '=', $this->current_team]
+        ])->get();
     }
 }

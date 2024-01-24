@@ -11,7 +11,7 @@
                 <div class="flex flex-col justify-start {{ request()->routeIs('profile.*') ? 'active': '' }}">
                     <button class="text-base" id="dropdownDefaultButton" data-dropdown-toggle="dropdown" >{{ $user->name }}</button>
                     <button id="dropdownActiveTeamButton" class="block py-2 text-xs text-left" data-dropdown-toggle="dropdowncurrent">
-                        <div class="truncate flex gap-2 items-center"><i class="fa fa-circle text-success text-xs"></i> {{ $user->activeTeam->name }}</div>
+                        @if($user->activeTeam) <div class="truncate flex gap-2 items-center"><i class="fa fa-circle text-success text-xs"></i> {{ $user->activeTeam->name }}</div> @endif
                     </button>
                 </div>
 
@@ -60,7 +60,7 @@
             </li>
         </ul>
     </div>
-
+        @if($user->activeTeam)
         <div id="dropdowncurrent" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-52 dark:bg-gray-700 dark:divide-gray-600">
             <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
                 <div>Active</div>
@@ -83,5 +83,6 @@
             </ul>
             @endif
         </div>
+        @endif
     @endauth
 </div>
